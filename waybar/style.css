@@ -1,0 +1,100 @@
+/* Fonte e cores gerais */
+* {
+    font-family: "JetBrainsMono Nerd Font";
+    font-size: 11px;
+    color: #ffffff;
+}
+
+/* barra transparente */
+window#waybar {
+    background: transparent;
+}
+
+/* ilhas básicas unificadas (CPU, memória, MPRIS, etc.) */
+#clock,
+#cpu,
+#memory,
+#network,
+#custom-volume,
+#custom-wlogout,
+#pulseaudio,
+#mpris {
+    background: rgba(30,30,30,0.85);
+    padding: 3px 8px;
+    margin: 3px;
+    border-radius: 25px;
+    transition: box-shadow 0.2s ease;
+}
+
+/* hover das ilhas */
+#clock:hover,
+#cpu:hover,
+#memory:hover,
+#network:hover,
+#custom-volume:hover,
+#custom-wlogout:hover,
+#pulseaudio:hover,
+#mpris:hover {
+    box-shadow: inset 0 0 0 9999px rgba(255,255,255,0.08);
+}
+
+/* ---------------------------------------------------------------------------------------------------- */
+/* ---------------------------------------------------------------------------------------------------- */
+
+/* workspaces separadas */
+#workspaces {
+    background: rgba(30,30,30,0.85);
+    padding: 3px 8px;
+    margin: 3px;
+    border-radius: 25px;
+}
+
+#workspaces button {
+    padding: 0px 17px;
+    color: #888888;
+    border: none;
+    outline: none;
+    box-shadow: none;
+    border-radius: 25px;
+    transition: background 0.2s ease, color 0.2s ease;
+}
+
+/* hover workspace: apenas escurecer levemente ou clarear o texto */
+#workspaces button:hover {
+    background: rgba(255,255,255,0.15);
+    color: #ffffff;
+}
+
+/* workspace ativa */
+#workspaces button.active {
+    background: rgba(255,255,255,0.15);
+    color: #ffffff;
+}
+
+/* ---------------------------------------------------------------------------------------------------- */
+/* ---------------------------------------------------------------------------------------------------- */
+
+#mpris{
+        padding: 3px 20px 3px 16px; /* top right bottom left */
+}
+
+#custom-wlogout {
+    background: rgba(30,30,30,0.85);
+    padding: 3px 25px 3px 21px; /* top right bottom left */
+    margin: 3px;
+    border-radius: 25px;
+}
+
+#clock{
+    background: rgba(30,30,30,0.85);
+    padding: 3px 15px 3px 15px; /* top right bottom left */
+    margin: 3px;
+    border-radius: 25px; 
+}
+
+#network{
+    background: rgba(30,30,30,0.85);
+    padding: 3px 13px 3px 10px; /* top right bottom left */
+    margin: 3px;
+    border-radius: 25px;
+}

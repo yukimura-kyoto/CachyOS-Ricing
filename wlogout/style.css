@@ -1,0 +1,57 @@
+* {
+    background-image: none;
+    font-size: 20px;
+    font-family: "JetBrains Mono NFM";
+}
+
+
+window {
+    background-color: rgba(105, 105, 105, 0.67);
+}
+
+button {
+    border-radius: 0px;
+    margin: 10px;
+    border-style: solid;
+    border: 3px solid #ffffff;
+    border-color: #ffffff;
+    color: white;
+    background-color: #1e1e1e;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 25%;
+}
+
+button:hover {
+    background-color: #777777;
+    color: rgb(255, 255, 255);
+}
+
+button span {
+    font-size: 1.2em;
+}
+
+
+#lock {
+    background-image: image(url("./icons/lock.png"));
+}
+
+#logout {
+    background-image: image(url("./icons/logout.png"));
+}
+
+#suspend {
+    background-image: image(url("./icons/sleep.png"));
+}
+
+#shutdown {
+    background-image: image(url("./icons/power.png"));
+}
+
+#reboot {
+    background-image: image(url("./icons/restart.png"));
+}
+
+#hibernate {
+    background-image: image(url("./icons/hibernate.png"));
+}

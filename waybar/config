@@ -1,0 +1,52 @@
+{
+  "layer": "top",
+  "position": "top",
+  "height": 17,
+
+  "modules-left": ["custom/wlogout","clock", "hyprland/workspaces"],
+  "modules-center": ["mpris"],
+  "modules-right": ["pulseaudio", "network", "cpu", "memory"],
+
+  "custom/wlogout": {
+    "format": "",
+    "tooltip": "Menu de logout",
+    "exec": "echo ",
+    "on-click": "wlogout",
+    "interval": 10
+  },
+
+  "clock": {
+    "format": "{:%I:%M %p}",
+    "interval": 10
+  },
+
+  "mpris": {
+    "format": "󰎆 {title} — {artist}",
+    "max-length": 50,
+    "tooltip": true,
+    "on-click": "playerctl play-pause",
+    "on-scroll-up": "playerctl volume 0.05+",
+    "on-scroll-down": "playerctl volume 0.05-",
+  },
+
+  "cpu": {
+    "format": " {usage}%",
+    "interval": 5
+  },
+
+  "memory": {
+    "format": " {}%",
+    "interval": 5
+  },
+
+  "network": {
+    "format-wifi": "",
+    "format-ethernet": "󰈀",
+    "format-disconnected": "⚠",
+    "interval": 10
+  },
+
+    "pulseaudio": {
+      "format": "  {volume}%",
+  }
+}

@@ -1,0 +1,86 @@
+{
+    "logo": {
+        "source": "~/.config/fastfetch/jotapegui.jpg",
+        "type": "kitty",
+        "height": 16,
+        "padding": {
+            "top": 0
+        }
+        
+    },
+    "display": {
+        "separator": "- "
+    },
+    "modules": [
+        // essa parte eu n mexo ok?
+        {
+            "type": "custom",
+            "format": "\u001b[255m  \u001b[255m  \u001b[255m  \u001b[255m  \u001b[255m  \u001b[255m  \u001b[255m  "
+        },
+        "break",
+        {
+            "type": "custom",
+            "format": "\u001b[97myukimurakyoto@cachyos-x8664\u001b[0m"
+        },
+        "break",
+        {
+            "type": "os",
+            "key": " ",
+            "keyColor": "255"
+        },
+        {
+            "type": "kernel",
+            "key": " ",
+            "keyColor": "255"
+        },
+        {
+            "type": "packages",
+            "format": "{} (pacman)",
+            "key": " ",
+            "keyColor": "255"
+        },
+        {
+            "type": "shell",
+            "key": " ",
+            "keyColor": "255"
+        },
+        {
+            "type": "terminal",
+            "key": " ",
+            "keyColor": "255"
+        },
+        {
+            "type": "wm",
+            "key": " ",
+            "keyColor": "255"
+        },
+        {
+            "type": "cursor",
+            "key": " ",
+            "keyColor": "255"
+        },
+        {
+            "type": "terminalfont",
+            "key": " ",
+            "keyColor": "255"
+        },
+        {
+            "type": "uptime",
+            "key": " ",
+            "keyColor": "255"
+        },
+        {
+            "type": "datetime",
+            "format": "{1}-{3}-{11}",
+            "key": " ",
+            "keyColor": "255"
+        },
+        "break",
+        {
+            "type": "custom",
+            "format": "\u001b[255m  \u001b[255m  \u001b[255m  \u001b[255m  \u001b[255m  \u001b[255m  \u001b[255m  "
+        },
+        "break",
+        "break"
+    ]
+}
