@@ -3,9 +3,13 @@
   "position": "top",
   "height": 17,
 
-  "modules-left": ["custom/wlogout","clock", "hyprland/workspaces"],
-  "modules-center": ["mpris"],
-  "modules-right": ["pulseaudio", "network", "cpu", "memory"],
+  "modules-left": ["custom/ws","hyprland/workspaces","hyprland/window"],
+  "modules-center": ["custom/cpuinfo","memory", "cpu","custom/wlogout", "clock#time", "clock#date"],
+  "modules-right": ["mpris", "pulseaudio","network"],
+
+
+
+
 
   "custom/wlogout": {
     "format": "",
@@ -15,23 +19,55 @@
     "interval": 10
   },
 
-  "clock": {
+  "clock#time": {
     "format": "{:%I:%M %p}",
     "interval": 10
   },
+    "clock#date": {
+    "format": "󰨳 {:%m-%d}",
+    "tooltip-format": "<tt>{calendar}</tt>",
+    "calendar": {
+      "mode": "month",
+      "mode-mon-col": 6,
+      "on-click-right": "mode",
+      "format": {
+        "months": "<span color='#b7bdf8'><b>{}</b></span>",
+        "weekdays": "<span color='#a5adcb' font='7'>{}</span>",
+        "today": "<span color='#ed8796'><b>{}</b></span>"
+      }
+    }
+  },
+
+
+
+
 
   "mpris": {
-    "format": "󰎆 {title} — {artist}",
-    "max-length": 50,
-    "tooltip": true,
-    "on-click": "playerctl play-pause",
-    "on-scroll-up": "playerctl volume 0.05+",
-    "on-scroll-down": "playerctl volume 0.05-",
+    "format": "{player_icon} {title} - {artist}",
+    "format-paused": "{status_icon} {title} - {artist}",
+    "player-icons": {
+      "default": "󰝚 ",
+      "spotify": "<span foreground='#a6da95'>󰓇 </span>",
+      "firefox": "<span foreground='#ed8796'>󰗃 </span>"
+    },
+    "status-icons": {
+      "paused": "<span color='#b7bdf8'>\u200A\u200A󰏤\u2009\u2009</span>"
+    },
+    "tooltip-format": "Playing: {title} - {artist}",
+    "tooltip-format-paused": "Paused: {title} - {artist}",
+    "min-length": 5,
+    "max-length": 35
   },
+
+
+
 
   "cpu": {
     "format": " {usage}%",
-    "interval": 5
+    "tooltip": false,
+    "interval": 5,
+    "min-length": 6,
+    "max-length": 6
   },
 
   "memory": {
@@ -48,5 +84,67 @@
 
     "pulseaudio": {
       "format": "  {volume}%",
-  }
+  },
+
+
+
+  // tenho q integrar o sistema de wallpaper aqui depois lol
+  "custom/ws": {
+    "format": "  ",
+    "on-click": "",
+    "max-length": 86400
+  },
+
+  "hyprland/window": {
+    "format": "{}",
+    "tooltip": false,
+    "min-length": 5,
+    "rewrite": {
+      // Desktop
+      "": "<span foreground='#8aadf4'> </span> Hyprland",
+      // Terminal
+      "~": "  Terminal",
+      "zsh": "  Terminal",
+      "kitty": "  Terminal",
+      "tmux(.*)": "<span foreground='#a6e3a1'> </span> Tmux",
+      // Browser
+      "(.*)Mozilla Firefox": "<span foreground='#ed8796'>󰈹 </span> Firefox",
+      "(.*) — Mozilla Firefox": "<span foreground='#ed8796'>󰈹 </span> $1",
+      "(.*)Zen Browser": "<span foreground='#f5a97f'>󰺕 </span> Zen Browser",
+      "(.*) — Zen Browser": "<span foreground='#f5a97f'>󰺕 </span> $1",
+      // Development
+      "(.*) - Visual Studio Code": "<span foreground='#8aadf4'>󰨞 </span> $1",
+      "(.*)Visual Studio Code": "<span foreground='#8aadf4'>󰨞 </span> Visual Studio Code",
+      "nvim": "<span foreground='#a6da95'> </span> Neovim",
+      "nvim (.*)": "<span foreground='#a6da95'> </span> $1",
+      "vim": "<span foreground='#a6da95'> </span> Vim",
+      "vim (.*)": "<span foreground='#a6da95'> </span> $1",
+      // Media
+      "(.*)Spotify": "<span foreground='#a6da95'> </span> Spotify",
+      "(.*)Spotify Premium": "<span foreground='#a6da95'> </span> Spotify Premium",
+      "OBS(.*)": "<span foreground='#a5adcb'> </span> OBS Studio",
+      "VLC media player": "<span foreground='#f5a97f'>󰕼 </span> VLC Media Player",
+      "(.*) - VLC media player": "<span foreground='#f5a97f'>󰕼 </span> $1",
+      "(.*) - mpv": "<span foreground='#c6a0f6'> </span> $1",
+      "qView": "  qView",
+      "(.*).jpg": "  $1.jpg",
+      "(.*).png": "  $1.png",
+      "(.*).svg": "  $1.svg",
+      // Social
+      "vesktop": "<span foreground='#8aadf4'> </span> Discord",
+      "• Discord(.*)": "Discord$1",
+      "(.*)Discord(.*)": "<span foreground='#8aadf4'> </span> $1Discord$2",
+      // Documents
+      "ONLYOFFICE Desktop Editors": "<span foreground='#ed8796'> </span> OnlyOffice Desktop",
+      "(.*).docx": "<span foreground='#8aadf4'> </span> $1.docx",
+      "(.*).xlsx": "<span foreground='#a6da95'> </span> $1.xlsx",
+      "(.*).pptx": "<span foreground='#f5a97f'> </span> $1.pptx",
+      "(.*).pdf": "<span foreground='#ed8796'> </span> $1.pdf",
+      // System
+      "Authenticate": "  Authenticate"
+    }
+  },
+
+
+
 }

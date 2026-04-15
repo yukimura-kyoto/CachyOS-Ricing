@@ -6,8 +6,9 @@ configuration {
     show-icons: true;
     icon-theme: "Papirus";
 
-    prompt: "❯";
-    display-run: "❯";
+    prompt: ">";
+    display-run: ">";
+    display-drun: ">";
 
 /*	modes: "window,drun,run,ssh";*/
 /*	font: "mono 12";*/
